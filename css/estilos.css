@@ -1,0 +1,94 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Barra de navegación */
+.navbar {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+}
+
+/* Sección de bienvenida */
+#home {
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background: linear-gradient(45deg, rgba(106, 17, 203, 0.7), rgba(182, 208, 253, 0.7)), url('../imagenes/arte-diseno-banner.jpeg') no-repeat center center/cover;
+}
+
+#home h1 {
+    animation: fadeInDown 1s;
+}
+
+#home p {
+    animation: fadeInUp 1s;
+}
+
+.btn {
+    background: #ff4081;
+    color: white;
+    border-radius: 50px;
+    padding: 12px 25px;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: #e91e63;
+    transform: scale(1.05);
+}
+
+a li {
+    color: #ff9a9e;
+}
+
+a:hover {
+    color: #fad0c4;
+    background: #e91e63;
+    transform: scale(1.05);
+}
+
+.hero-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    background-attachment: fixed;
+}
+
+
+
+/* Secciones */
+#historia-del-arte {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    padding: 5rem 0;
+}
+
+#artistas-destacados {
+    background: linear-gradient(45deg, #a18cd1, #fbc2eb);
+    padding: 5rem 0;
+}
+
+#hero {
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.banner-historia {
+    background: linear-gradient(45deg, rgba(106, 17, 203, 0.5), rgba(182, 208, 253, 0.5)), url('../historia/imagenes/historia-arte.jpg') no-repeat center center/cover;
+}
+
+/* Pie de página */
+footer {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
