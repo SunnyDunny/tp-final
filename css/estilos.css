@@ -92,3 +92,34 @@ footer {
     text-align: center;
     padding: 1rem 0;
 }
+
+/* Estilo del contenedor y piezas */
+#puzzle-container {
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 2px solid #333;
+    margin: 20px auto;
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Transición para el efecto fade */
+    }
+    /* Clase para desvanecer (fade out) el contenedor */
+    .fade {
+    opacity: 0;
+    }
+        .puzzle-piece {
+        border: 1px solid #ccc;
+        background-image: url('imagenes/da-vinci-retrato.jpg'); /* Asegúrate de colocar la ruta correcta */
+        background-size: 300px 300px; /* Ajusta al tamaño total de la imagen */
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        }
+        /* Efecto al presionar la pieza */
+    .puzzle-piece:active {
+    transform: scale(0.95);
+    }
+        .empty {
+        background: #fff;
+        cursor: default;
+        }
