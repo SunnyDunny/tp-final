@@ -1,28 +1,68 @@
-// Arreglo de imágenes a utilizar en los puzzles
-const images = [
-    '../juego/imagenes/da-vinci-retrato.jpg', // Ruta de la primera imagen
-    '../juego/imagenes/frida-kahlo.jpg', // Ruta de la segunda imagen
-    '../juego/imagenes/van-gogh.jpg'  // Y así sucesivamente...
-  ];
-  let currentPuzzleIndex = 0; // Índice de la imagen actual
+    // Arreglo de imágenes a utilizar en los puzzles
+    const images = [
+        '../juego/imagenes/da-vinci-retrato.jpg', // Ruta de la primera imagen
+        '../juego/imagenes/frida-kahlo.jpg', // Ruta de la segunda imagen
+        '../juego/imagenes/van-gogh.jpg'  // Y así sucesivamente...
+    ];
+
+    let currentPuzzleIndex = 0; // Índice de la imagen actual
+
+    const container = document.getElementById("puzzle-container");
+    const gridSize = 3; // Usaremos un puzzle de 3x3
+    let emptyIndex;
+    let pieces = [];
+
+    // Sistema de puntaje
+    let score = 1000;
+
+    function updateScoreDisplay() {
+    document.getElementById("score").innerText = "Puntaje: " + score;
+    }
+
+    function actualizarPuntaje(valor) {
+        score += valor;
+        if (score < 0) score = 0;
+        updateScoreDisplay();
+        
+        // Si se han acabado los puntos, termina el juego
+        if (score === 0) {
+          terminarJuego();
+        }
+}      
+
+function terminarJuego() {
+    // Aplicar el efecto fade para indicar el fin de la ronda
+    container.classList.add("fade");
+    
+    setTimeout(() => {
+      // Puede resultar conveniente mostrar un mensaje de "Game Over" o similar
+      alert("¡Se acabaron los puntos! La ronda termina sin ganar.");
+      
+      // Cambiar a la siguiente imagen (se usa un bucle con módulo)
+      currentPuzzleIndex = (currentPuzzleIndex + 1) % images.length;
+      
+      // Reinicializar el puzzle con la nueva imagen
+      iniciarPuzzle();
+      container.classList.remove("fade");
+      
+      // Opcional: Reiniciar el puntaje para la siguiente ronda
+      score = 1000;
+      updateScoreDisplay();
+    }, 500); // El tiempo (500ms) coincide con la duración de la transición en el CSS
+  }
   
-  const container = document.getElementById("puzzle-container");
-  const gridSize = 3; // Usaremos una cuadrícula 3x3
-  let emptyIndex;
-  let pieces = [];
-  
-  // Función para inicializar (o reinicializar) el rompecabezas
-  function iniciarPuzzle() {
+
+    // Función para inicializar (o reinicializar) el puzzle
+    function iniciarPuzzle() {
     container.innerHTML = '';
     pieces = [];
     const totalPiezas = gridSize * gridSize;
-    emptyIndex = totalPiezas - 1; // La última posición será vacía
+    emptyIndex = totalPiezas - 1; // La última celda es el espacio vacío
     const imagenURL = images[currentPuzzleIndex];
-  
-    // Crear las piezas del puzzle
+
     for (let i = 0; i < totalPiezas; i++) {
-      const pieza = document.createElement("div");
-      if (i !== emptyIndex) {
+        const pieza = document.createElement("div");
+        if (i !== emptyIndex) {
         const row = Math.floor(i / gridSize);
         const col = i % gridSize;
         pieza.style.backgroundImage = `url(${imagenURL})`;
@@ -30,88 +70,130 @@ const images = [
         pieza.style.backgroundSize = `${gridSize * 100}px ${gridSize * 100}px`;
         pieza.dataset.posicionOriginal = i;
         pieza.classList.add("puzzle-piece");
-        
-        // Usamos función normal para obtener el índice actual
         pieza.addEventListener("click", function () {
-          const currentIndex = pieces.indexOf(this);
-          moverPieza(currentIndex);
+            const currentIndex = pieces.indexOf(this);
+            moverPieza(currentIndex);
         });
-      } else {
+        } else {
         pieza.classList.add("empty");
-      }
-      pieces.push(pieza);
+        }
+        pieces.push(pieza);
     }
-  
-    // Mezclar las piezas de forma aleatoria
+
+    // Mezclar las piezas de manera aleatoria
     pieces.sort(() => Math.random() - 0.5);
     container.innerHTML = '';
     pieces.forEach((pieza, idx) => {
-      container.appendChild(pieza);
-      if (pieza.classList.contains("empty")) {
+        container.appendChild(pieza);
+        if (pieza.classList.contains("empty")) {
         emptyIndex = idx;
-      }
+        }
     });
-  }
-  
-  // Función para mover una pieza (si es adyacente al espacio vacío)
-  function moverPieza(indice) {
+    }
+
+    // Función para mover una pieza si es adyacente a la celda vacía
+    function moverPieza(indice) {
     const filaEmpty = Math.floor(emptyIndex / gridSize);
     const colEmpty = emptyIndex % gridSize;
     const filaPieza = Math.floor(indice / gridSize);
     const colPieza = indice % gridSize;
     const distancia = Math.abs(filaEmpty - filaPieza) + Math.abs(colEmpty - colPieza);
-  
+
     if (distancia === 1) {
-      // Intercambia las posiciones en el arreglo
-      [pieces[emptyIndex], pieces[indice]] = [pieces[indice], pieces[emptyIndex]];
-  
-      // Renderiza de nuevo el contenedor
-      container.innerHTML = '';
-      pieces.forEach((pieza, idx) => {
+        // Intercambiamos las posiciones en el array
+        [pieces[emptyIndex], pieces[indice]] = [pieces[indice], pieces[emptyIndex]];
+
+        // Actualizamos el contenedor
+        container.innerHTML = '';
+        pieces.forEach((pieza, idx) => {
         container.appendChild(pieza);
         if (pieza.classList.contains("empty")) {
-          emptyIndex = idx;
+            emptyIndex = idx;
         }
-      });
-  
-      comprobarVictoria();
+        });
+
+        // Descontamos puntos por movimiento
+        actualizarPuntaje(-5);
+        comprobarVictoria();
     }
-  }
-  
-  // Función para comprobar si el puzzle está resuelto y pasar al siguiente
-  function comprobarVictoria() {
+    }
+
+    // Función para comprobar si el puzzle está resuelto
+    function comprobarVictoria() {
     for (let i = 0; i < pieces.length; i++) {
-      if (!pieces[i].classList.contains("empty") && pieces[i].dataset.posicionOriginal != i) {
+        if (!pieces[i].classList.contains("empty") && pieces[i].dataset.posicionOriginal != i) {
         return;
-      }
+        }
     }
-    // El rompecabezas se ha resuelto
+    // Si llegamos hasta aquí, el puzzle se ha resuelto.
     setTimeout(() => {
-      alert("¡Felicidades, has resuelto el rompecabezas!");
-      
-      // Añade la clase "fade" para iniciar el efecto de desvanecimiento
-      container.classList.add("fade");
-      
-      // Usa el evento 'transitionend' para esperar a que termine la transición
-      container.addEventListener("transitionend", function handler() {
-        // Remueve la clase para preparar el fade in en el nuevo puzzle
-        container.classList.remove("fade");
-        
-        // Actualiza el índice para la siguiente imagen (ciclando mediante módulo)
+        container.classList.add("fade");
+        setTimeout(() => {
+        // Cambiar a la siguiente imagen (se utiliza un bucle con módulo)
         currentPuzzleIndex = (currentPuzzleIndex + 1) % images.length;
-        
-        // Reinicializa el rompecabezas con la nueva imagen
         iniciarPuzzle();
-        
-        // Remueve este manejador para evitar llamadas duplicadas
-        container.removeEventListener("transitionend", handler);
-      });
-      
+        container.classList.remove("fade");
+        }, 500);
     }, 100);
-  }
-  
-  // Inicializar el puzzle una vez que el DOM esté listo
-  document.addEventListener("DOMContentLoaded", () => {
+    }
+
+    // Función para mostrar la pista completa (overlay)
+    function mostrarPista() {
+    actualizarPuntaje(-20);
+    const overlay = document.createElement("div");
+    overlay.id = "hintOverlay";
+    overlay.style.backgroundImage = `url(${images[currentPuzzleIndex]})`;
+    container.appendChild(overlay);
+
+    // El overlay se remueve después de 2 segundos
+    setTimeout(() => {
+        if (container.contains(overlay)) {
+        container.removeChild(overlay);
+        }
+    }, 2000);
+    }
+
+    // Función para mostrar una sugerencia (resalta la ficha adyacente al hueco)
+    function mostrarSugerencia() {
+    actualizarPuntaje(-10);
+    const filaEmpty = Math.floor(emptyIndex / gridSize);
+    const colEmpty = emptyIndex % gridSize;
+    
+    // Posibles direcciones: arriba, abajo, izquierda, derecha
+    const direcciones = [
+        { dx: 0, dy: -1 },  
+        { dx: 0, dy: 1 },   
+        { dx: -1, dy: 0 },  
+        { dx: 1, dy: 0 }    
+    ];
+
+    let indiceSugerido = null;
+    for (const { dx, dy } of direcciones) {
+        const nuevaFila = filaEmpty + dy;
+        const nuevaCol = colEmpty + dx;
+        if (nuevaFila >= 0 && nuevaFila < gridSize && nuevaCol >= 0 && nuevaCol < gridSize) {
+        const indice = nuevaFila * gridSize + nuevaCol;
+        if (!pieces[indice].classList.contains("empty")) {
+            indiceSugerido = indice;
+            break;
+        }
+        }
+    }
+    if (indiceSugerido !== null) {
+        const piezaSugerida = pieces[indiceSugerido];
+        piezaSugerida.classList.add("hint");
+        setTimeout(() => {
+        piezaSugerida.classList.remove("hint");
+        }, 2000);
+    }
+    }
+
+    // Asignar eventos a los botones de pista
+    document.getElementById("hintBtn").addEventListener("click", mostrarPista);
+    document.getElementById("sugerenciaBtn").addEventListener("click", mostrarSugerencia);
+
+    // Inicializar el puzzle y el puntaje al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
     iniciarPuzzle();
-  });
-  
+    updateScoreDisplay();
+});
