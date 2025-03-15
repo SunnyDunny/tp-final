@@ -1,38 +1,65 @@
+/* Importar fuentes desde Google Fonts (esto también se puede colocar en el HTML dentro de <head>) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap');
+
+
 /* Estilos generales */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fdfdfd;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* Barra de navegación */
 .navbar {
     background: linear-gradient(45deg, #6a11cb, #2575fc);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 /* Sección de bienvenida */
 #home {
     height: 75vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    background: linear-gradient(45deg, rgba(106, 17, 203, 0.7), rgba(182, 208, 253, 0.7)), url('../imagenes/arte-diseno-banner.jpeg') no-repeat center center/cover;
+    background: linear-gradient(45deg, rgba(106, 17, 203, 0.7), rgba(182, 208, 253, 0.7)), 
+                url('../imagenes/arte-diseno-banner.jpeg') no-repeat center center/cover;
+    position: relative;
+    overflow: hidden;
 }
 
 #home h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    letter-spacing: 1px;
+    margin: 0;
     animation: fadeInDown 1s;
 }
 
 #home p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    max-width: 600px;
     animation: fadeInUp 1s;
 }
 
+/* Botones */
 .btn {
     background: #ff4081;
     color: white;
+    border: none;
     border-radius: 50px;
     padding: 12px 25px;
-    transition: all 0.3s;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    margin-top: 1.5rem;
 }
 
 .btn:hover {
@@ -40,8 +67,10 @@ body {
     transform: scale(1.05);
 }
 
+/* Enlaces (dentro de listas de navegación u otros) */
 a li {
     color: #ff9a9e;
+    transition: color 0.3s ease;
 }
 
 a:hover {
@@ -50,6 +79,7 @@ a:hover {
     transform: scale(1.05);
 }
 
+/* Imagen de héroe */
 .hero-img {
     background-size: cover;
     background-position: center;
@@ -57,19 +87,21 @@ a:hover {
     width: 100%;
     height: 100vh;
     background-attachment: fixed;
+    filter: brightness(0.9);
 }
-
 
 
 /* Secciones */
 #historia-del-arte {
     background: linear-gradient(45deg, #ff9a9e, #fad0c4);
-    padding: 5rem 0;
+    padding: 5rem 2rem;
+    color: #333;
 }
 
 #artistas-destacados {
     background: linear-gradient(45deg, #a18cd1, #fbc2eb);
-    padding: 5rem 0;
+    padding: 5rem 2rem;
+    color: #333;
 }
 
 #hero {
@@ -82,18 +114,23 @@ a:hover {
 }
 
 .banner-historia {
-    background: linear-gradient(45deg, rgba(106, 17, 203, 0.5), rgba(182, 208, 253, 0.5)), url('../historia/imagenes/historia-arte.jpg') no-repeat center center/cover;
+    background: linear-gradient(45deg, rgba(106, 17, 203, 0.5), rgba(182, 208, 253, 0.5)), 
+                url('../historia/imagenes/historia-arte.jpg') no-repeat center center/cover;
 }
+
 
 /* Pie de página */
 footer {
     background: linear-gradient(45deg, #6a11cb, #2575fc);
     color: white;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
 }
 
-/* Estilo del contenedor y piezas */
+
+/* Estilos básicos para el contenedor y la cuadrícula del puzzle */
 #puzzle-container {
     width: 300px;
     height: 300px;
@@ -102,24 +139,135 @@ footer {
     border: 2px solid #333;
     margin: 20px auto;
     opacity: 1;
-    transition: opacity 0.5s ease; /* Transición para el efecto fade */
-    }
-    /* Clase para desvanecer (fade out) el contenedor */
-    .fade {
+    transition: opacity 0.5s ease;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* Clase que aplica el efecto fade (desvanecimiento) */
+.fade {
     opacity: 0;
-    }
-        .puzzle-piece {
-        border: 1px solid #ccc;
-        background-image: url('imagenes/da-vinci-retrato.jpg'); /* Asegúrate de colocar la ruta correcta */
-        background-size: 300px 300px; /* Ajusta al tamaño total de la imagen */
-        cursor: pointer;
-        transition: transform 0.2s ease;
-        }
-        /* Efecto al presionar la pieza */
-    .puzzle-piece:active {
+}
+
+/* Estilos para cada pieza */
+.puzzle-piece {
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.puzzle-piece:active {
     transform: scale(0.95);
-    }
-        .empty {
-        background: #fff;
-        cursor: default;
-        }
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.empty {
+    background: #fff;
+    cursor: default;
+}
+
+/* Estilos para el overlay que muestra la imagen completa como pista */
+#hintOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+    z-index: 1000;
+    border-radius: 8px;
+}
+
+/* Clase para resaltar la pieza sugerida */
+.hint {
+    border: 3px solid orange;
+    animation: parpadeo 1s infinite;
+    transform: scale(1.05);
+}
+
+@keyframes parpadeo {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Estilo para el puntaje */
+#score {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.hint-btn, .sugerencia-btn {
+    background: linear-gradient(45deg, #ff4081, #e91e63);
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.hint-btn:hover, 
+.sugerencia-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.hint-btn:active, 
+.sugerencia-btn:active {
+    transform: translateY(0) scale(1);
+}
+
+#puzzle-container {
+    /* Ajustamos el tamaño y la relación de aspecto */
+    width: 320px;
+    max-width: 90%;
+    aspect-ratio: 1;
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    
+    /* Fondo sutil con un tono claro y borde redondeado */
+    background: #f5f5f5;
+    border: 2px solid #ddd;
+    padding: 5px;
+    margin: 20px auto;
+    border-radius: 10px;
+    
+    /* Sombra suave para generar profundidad */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease;
+    position: relative;
+}
+
+/* Cada pieza del puzzle */
+.puzzle-piece {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.puzzle-piece:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Espacio vacío */
+.empty {
+    background: #fff;
+    cursor: default;
+}
