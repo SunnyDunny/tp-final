@@ -57,11 +57,25 @@
                 <div class="container">
                     <div class="row">
                         <h2 class="text-center mb-4">¡Resolvé el Puzzle!</h2>
-                        <div id="puzzle-container"></div>
+                        <!-- Elemento para mostrar el puntaje -->
+                        <div id="score">Puntaje: 1000</div>
+  
+                        <!-- Contenedor del puzzle; se coloca en posición relative para acomodar overlays -->
+                        <div id="puzzle-container" style="position: relative;"></div>
+  
+                        <!-- Botones para activar las pistas -->
+                        <button id="hintBtn" class="hint-btn">Mostrar Pista Completa</button>
+                        <button id="sugerenciaBtn" class="sugerencia-btn">Mostrar Sugerencia</button>
                         <p>
                             <strong>Instrucciones:</strong> Es muy sencillo.
                             Hacé click en una pieza y esta se moverá inmediatamente hacia el espacio vacío adyacente.
-                            Seguí esta lógica hasta completar el rompecabezas. Son tres rondas. ¡Buenas suerte!
+                            Seguí esta lógica hasta completar el rompecabezas. <em>Cada movimiento resta 5 puntos.</em>
+                            Son tres rondas. ¡Buenas suerte!
+                        </p>
+                        <p>
+                            <strong>Nota:</strong> Usá la Pista Completa o la Sugerencia si te trabás.
+                            Pero ojo, ¡también restan puntos!<br>
+                            Si se te acaban los puntos, el rompecabezas se reiniciará y cambiará de imagen.
                         </p>
                     </div>
                 </div>
