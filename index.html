@@ -11,6 +11,7 @@
     </head>
     <body>
         <!-- Barra de navegación -->
+        <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">Arte y Diseño</a>
@@ -37,22 +38,30 @@
                         </li>
         
                         <li class="nav-item">
-                            <a class="nav-link" href="galeria/index.html">Galería de Obras</a>
+                            <a class="nav-link" href="galeria/index.html">Galería</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="recursos/index.html">Recursos para Artistas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="juego/index.html">Juego Educativo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contacto.html">Contacto</a>
+                            <a class="nav-link" href="juego/index.html">Puzzle</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        </header>
         
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+              <div class="d-flex">
+                <div class="toast-body">
+                  Los datos se enviaron correctamente.
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+              </div>
+            </div>
+          </div>
 
         <section id="home" class="d-flex align-items-center justify-content-center text-center text-light position-relative">
             <div class="container animate__animated animate__fadeIn">
@@ -67,7 +76,7 @@
                 <h2 class="text-center mb-4" data-aos="fade-down">Historia del Arte</h2>
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="imagenes/la-noche-estrellada1.gif" class="img-fluid rounded shadow" alt="Historia del Arte">
+                        <img src="imagenes/la-noche-estrellada1.gif" class="img-fluid rounded shadow" alt="La Noche Estrellada de Vincent van Gogh">
                     </div>
                     <div class="col-md-6">
                         <p data-aos="fade-left">
@@ -87,7 +96,7 @@
                 <div class="row text-center g-4">
                     <div class="col-md-4">
                         <div class="card shadow" data-aos="fade-up">
-                            <img src="imagenes/da-vinci-retrato.jpg" class="card-img-top" alt="Artista 1">
+                            <img src="imagenes/da-vinci-retrato.jpg" class="card-img-top" alt="Retrato de Leonardo da Vinci">
                             <div class="card-body" data-aos="fade-up">
                                 <h5 class="card-title">Leonardo da Vinci</h5>
                                 <p class="card-text">Genio del Renacimiento conocido por "La Mona Lisa" y "La Última Cena".</p>
@@ -96,7 +105,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="card shadow" data-aos="fade-up">
-                            <img src="imagenes/frida-kahlo.jpg" class="card-img-top" alt="Artista 2">
+                            <img src="imagenes/frida-kahlo.jpg" class="card-img-top" alt="Retrato de Frida Kahlo">
                             <div class="card-body" data-aos="fade-up">
                                 <h5 class="card-title">Frida Kahlo</h5>
                                 <p class="card-text">Artista mexicana reconocida por sus autorretratos llenos de simbolismo.</p>
@@ -105,7 +114,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="card shadow" data-aos="fade-up">
-                            <img src="imagenes/van-gogh.jpg" class="card-img-top" alt="Artista 3">
+                            <img src="imagenes/van-gogh.jpg" class="card-img-top" alt="Retrato de Van Gogh">
                             <div class="card-body" data-aos="fade-up">
                                 <h5 class="card-title">Vincent van Gogh</h5>
                                 <p class="card-text">Pintor postimpresionista famoso por "La Noche Estrellada" y "Los Girasoles".</p>
@@ -122,7 +131,7 @@
                 <h2 class="text-center mb-4" data-aos="fade-down">Técnicas y Estilos</h2>
                 <div class="row">
                     <div class="col-md-6">
-                        <img src="imagenes/estilos-de-arte.jpg" class="img-fluid rounded shadow" alt="Historia del Arte">
+                        <img src="imagenes/estilos-de-arte.jpg" class="img-fluid rounded shadow" alt="Collage de estilos de arte">
                         <hr>
                         <img src="imagenes/kandinsky.jpg" class="img-fluid rounded shadow" alt="Obra de Kandinsky">
                         <hr>
@@ -160,12 +169,28 @@
         </section>
 
         <!-- Pie de página -->
-        <footer class="text-light text-center p-3">
-            <p>&copy; 2024 TP Final - Todos los derechos reservados.</p>
-        </footer>
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
+            <p class="col-md-4 mb-0 text-body-secondary">Arte y Diseño</p>
+        
+            <ul class="nav col-md-4 justify-content-end">
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+              <li class="nav-item"><a href="historia/index.html" class="nav-link px-2 text-body-secondary">Historia del Arte</a></li>
+              <li class="nav-item"><a href="destacados/index.html" class="nav-link px-2 text-body-secondary">Artistas Destacados</a></li>
+              <li class="nav-item"><a href="corrientes/index.html" class="nav-link px-2 text-body-secondary">Corrientes Artísticas</a></li>
+              <li class="nav-item"><a href="tendencias/index.html" class="nav-link px-2 text-body-secondary">Inspiración y Tendencias</a></li>
+              <li class="nav-item"><a href="galeria/index.html" class="nav-link px-2 text-body-secondary">Galería</a></li>
+            </ul>
+            <ul class="nav col-md-4 justify-content-end">
+              <li class="nav-item"><a href="recursos/index.html" class="nav-link px-2 text-body-secondary">Recursos para Artistas</a></li>
+              <li class="nav-item"><a href="juego/index.html" class="nav-link px-2 text-body-secondary">Puzzle</a></li>
+              <li class="nav-item"><a href="contacto.html" class="nav-link px-2 text-body-secondary">Contacto</a></li>
+              <li class="nav-item"><a href="about.html" class="nav-link px-2 text-body-secondary">About</a></li>
+            </ul>
+          </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script src="js/librerias.js"></script>
+        <script src="js/form.js"></script>
     </body>
     </html>
