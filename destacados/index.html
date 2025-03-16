@@ -1,145 +1,348 @@
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Artistas Destacados</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-        <link rel="stylesheet" href="../css/estilos.css">
-    </head>
-    <body>
-        <!-- Barra de navegación -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">Arte y Diseño</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Inicio</a>
-                        </li>
-                        
-                        <!-- Menú desplegable -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Aprender
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="../historia/index.html">Historia del Arte</a></li>
-                                <li><a class="dropdown-item" href="index.html">Artistas Destacados</a></li>
-                                <li><a class="dropdown-item" href="../corrientes/index.html">Corrientes Artísticas</a></li>
-                                <li><a class="dropdown-item" href="../tendencias/index.html">Inspiración y Tendencias</a></li>
+            <!DOCTYPE html>
+            <html lang="es">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Artistas Destacados</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+                <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+                <link rel="stylesheet" href="../css/estilos.css">
+            </head>
+
+            <body>
+                <!-- Barra de navegación -->
+                <header class="sticky-top">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="index.html">Arte y Diseño</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../index.html">Inicio</a>
+                                </li>
+                                
+                                <!-- Menú desplegable -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Aprender
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="../historia/index.html">Historia del Arte</a></li>
+                                        <li><a class="dropdown-item" href="index.html">Artistas Destacados</a></li>
+                                        <li><a class="dropdown-item" href="../corrientes/index.html">Corrientes Artísticas</a></li>
+                                        <li><a class="dropdown-item" href="../tendencias/index.html">Inspiración y Tendencias</a></li>
+                                    </ul>
+                                </li>
+                
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../galeria/index.html">Galería</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../recursos/index.html">Recursos para Artistas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../juego/index.html">Puzzle</a>
+                                </li>
                             </ul>
-                        </li>
-        
-                        <li class="nav-item">
-                            <a class="nav-link" href="../galeria/index.html">Galería de Obras</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../recursos/index.html">Recursos para Artistas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../juego/index.html">Juego Educativo</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contacto.html">Contacto</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        
-        <section id="hero" class="d-flex align-items-center justify-content-center text-center text-light position-relative">
-            <div class="container animate__animated animate__fadeIn">
-                <h1 class="display-3 fw-bold animate__fadeInDown"><span class="text-light">Artistas Destacados</span></h1>
-            </div>
-        </section>
+                        </div>
+                    </div>
+                </nav>
+                </header>
+                
+                <section id="hero" class="d-flex align-items-center justify-content-center text-center text-light position-relative">
+                    <div class="container animate__animated animate__fadeIn">
+                        <h1 class="display-3 fw-bold animate__fadeInDown"><span class="text-light">Artistas Destacados</span></h1>
+                    </div>
+                </section>
 
-        <section id="historia-del-arte" class="p-5" data-aos="fade-up">
-            <div class="container">
-                <div class="row">
-                        <div class="col-md-4">
-                            <article data-aos="fade-up">
-                                <h2>Leonardo Da Vinci</h2>
+                <section id="historia-del-arte" class="p-5" data-aos="fade-up">
+                    <div class="container">
+                        <div class="row">
+                                <div class="col">
+                                    <article data-aos="fade-up">
+                                        <h2 class="text-center">Los Pintores más influyentes</h2>
+                                    <p data-aos="fade-left">
+                                        el arte contemporáneo está en constante evolución,
+                                        siempre reflejando las inquietudes y los cambios de la sociedad moderna.
+                                        Pero, ¿qué tipo de arte contemporáneo se mueve actualmente?
+                                    </p>
+                                    </article>
+                                </div>
+                                    <hr><br>
+                                <div class="row justify-content-center"> 
+                                    <div class="col-md-6 mb-4">
+                                        <article data-aos="fade-up">
+                                        <h3 data-aos="fade-up">Leonardo Da Vinci</h3>
+                                        <p data-aos="fade-left">
+                                            Además de experimentar con diversos medios, Leonardo da Vinci también concibió formas revolucionaras de crear composiciones impactantes.
+                                            De hecho, su característica composición triangular todavía se usa hoy en día y es ampliamente considerada como uno de los diseños de pintura más agradables visualmente.
+                                            También fue uno de los primeros defensores del estudio de modelos anatómicos para perfeccionar su arte, algo que era ilegal en ese momento.
+                                            <br>
+                                            Aunque se le considera un artista legendario por pinturas como la Mona Lisa y La última cena, da Vinci pintó relativamente poco;
+                                            solo hay unas 17 obras sobrevivientes que se le pueden atribuir.
+                                        </p>
+                                        <img src="imagenes/mona-lisa.jpg" class="img-fluid rounded shadow" alt="La Mona Lisa" data-aos="fade-up">
+                                    </article>
+                                    </div>
+                                    <hr><br>
+
+                                    <div class="col-md-6 mb-4">
+                                        <article data-aos="fade-up">
+                                    <h3 data-aos="fade-up">Miguel Ángel</h3>
+                                    <p data-aos="fade-left">
+                                        Aunque Miguel Ángel probablemente se veía a sí mismo como un escultor, su lugar en esta lista celebra su ingenio.
+                                        Si bien sobreviven pocas pinturas de Miguel Ángel, las que aún podemos ver están entre las mejores de la historia.
+                                        Su habilidad para dominar rápidamente la pintura al fresco y llevarla a nuevas alturas es evidente tanto en el techo de la Capilla Sixtina como en El juicio final,
+                                        que sigue inspirando a los artistas hoy en día.
+                                    </p>
+                                    <img src="imagenes/la-creacion-de-adan.jpg" class="img-fluid rounded shadow" alt="La Creación de Adán de Miguel Angel" data-aos="fade-up">
+                                </article>
+                                    </div>
+                                    <hr><br>
+
+                                    <div class="col-md-6 mb-4">
+                                        <article data-aos="fade-up">
+                                    <h3 data-aos="fade-up">Diego Velázquez</h3>
+                                    <p data-aos="fade-left">
+                                        Nacido en Sevilla, España, Diego Velázquez tuvo una carrera increíblemente exitosa
+                                        que lo convirtió en uno de los pintores más destacados del Siglo de Oro español.
+                                        Gran parte de su producción artística se relaciona con su trabajo como pintor de la corte del rey Felipe IV,
+                                        un puesto que ocupó por casi 40 años. Su estilo individualista lo distinguió de otros pintores barrocos,
+                                        y sus pinceladas sueltas eventualmente inspirarían tanto a pintores realistas como impresionistas.
+                                    </p>
+                                    <img src="imagenes/la-familia-de-felipe-iv.jpg" class="img-fluid rounded shadow" alt="La Familia de Felipe IV de Diego Velazquez" data-aos="fade-up">
+                                </article>
+                                </div>
+                                    <hr><br>
+
+                                    <div class="col-md-6 mb-4">
+                                        <article data-aos="fade-up">
+                                    <h3 data-aos="fade-up">Artemisia Gentileschi</h3>
+                                    <p data-aos="fade-left">
+                                        Esta figura clave de la pintura barroca también fue una de las primeras artistas mujeres en tener éxito.
+                                        A lo largo del siglo XVII, Artemisia Gentileschi creó pinturas dinámicas y explosivas con su característico uso del claroscuro y una paleta vibrante.
+                                        A pesar de que su arte a veces era opacado por su contemporáneo,
+                                        Caravaggio, su destreza y su rol en la historia del arte femenino han comenzado a recibir la atención que merecían desde un principio.
+                                    </p>
+                                    <img src="imagenes/judit-decapitando-a-holofernes.jpg" class="img-fluid rounded shadow" alt="Judit Decapitando a Holofernes de Artemisia Gentileschi" data-aos="fade-up">
+                                </article>
+                                </div>
+                                    <hr><br>
+
+                                    <div class="col-md-6 mb-4">
+                                        <article data-aos="fade-up">
+                                    <h3 data-aos="fade-up">Rembrandt</h3>
+                                    <p data-aos="fade-left">
+                                        Rembrandt Harmenszoon van Rijn es tan famoso que incluso hoy llamamos a este maestro holandés por su primer nombre.
+                                        Dado que pintó de todo, desde escenas de género hasta paisajes, pasando por grandes pinturas históricas y mitológicas,
+                                        Rembrandt fue la fuerza dominante en el arte holandés durante gran parte del siglo XVII.
+                                        Su uso magistral de la luz, así como su enfoque refinado y expresivo de la pintura,
+                                        lo han convertido en un favorito entre los amantes del arte hasta el día de hoy.
+                                    </p>
+                                    <img src="imagenes/rembrandt-la-ronda-de-noche.jpg" class="img-fluid rounded shadow" alt="La Ronda de Noche de Rembrandt" data-aos="fade-up">
+                                </article>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <article data-aos="fade-up">
+                                <h3 data-aos="fade-up">Francisco de Goya</h3>
+                                <p data-aos="fade-left">
+                                    Francisco de Goya, quien plasmó temas como la realeza, desnudos, guerra e incluso ocultismo en sus cuadros,
+                                    es considerado una de las figuras más influyentes de la historia del arte.
+                                    Como personaje clave del Romanticismo, un movimiento de finales del siglo XIII,
+                                    Goya es considerado simultáneamente uno de los últimos grandes maestros y un precursor del arte moderno.
+                                </p>
+                                <img src="imagenes/el-tres-de-mayo.jpg" class="img-fluid rounded shadow" alt="El Tres de Mayo de Francisco de Goya" data-aos="fade-up">
+                            </article>
+                            </div>
+
+                            <div class="col-md-6 mb-4">
+                                <article data-aos="fade-up">
+                            <h3 data-aos="fade-up">J.M.W. Turner</h3>
                             <p data-aos="fade-left">
-                            El arte es un vasto océano de creatividad que refleja la esencia y evolución de la humanidad a través de diversos estilos y técnicas.<br>
-                            En <strong>pintura</strong>, el <strong>Renacimiento</strong> marcó un retorno a la armonía y proporciones clásicas,
-                            con maestros como Leonardo da Vinci y Rafael que buscaban la perfección en cada trazo.<br>
-                            Luego, el <strong>Impresionismo</strong> rompió con las tradiciones al capturar momentos efímeros y la luz cambiante,
-                            con artistas como Monet y Renoir utilizando pinceladas sueltas y colores vibrantes.<br>
-                            El <strong>Expresionismo</strong> llevó las emociones al lienzo, distorsionando la realidad para transmitir sentimientos profundos;
-                            pensemos en las obras intensas de Edvard Munch.<br>
-                        </p>
+                                El pintor romántico J.M.W. Turner es conocido como un precursor del arte moderno.
+                                Con orígenes en la pintura tradicional neoclásica, Turner comenzó a luchar por el realismo en su trabajo,
+                                un enfoque prácticamente desconocido en ese momento.
+                                A través de miles de acuarelas y pinturas al óleo, experimentó con la luz, el color y el pincel.
+                                Incluso trabajó en sus pinturas al óleo al aire libre, algo que luego influiría en los impresionistas.
+                            </p>
+                            <img src="imagenes/fishermen-at-sea-turner.jpg" class="img-fluid rounded shadow" alt="Pescadores en el Mar de J.M.W. Turner" data-aos="fade-up">
                         </article>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                            <article data-aos="fade-up">
+                        <h3 data-aos="fade-up">Vincent van Gogh</h3>
+                        <p data-aos="fade-left">
+                            Aunque hoy es visto como uno de los pintores más influyentes del arte occidental, Vincent van Gogh no tuvo éxito comercial durante su vida.
+                            Sin embargo, desde principios del siglo XX, sus expresivas pinturas han cautivado al mundo del arte.
+                            Llenas de pinceladas dramáticas y colores llamativos, la obra de este pintor postimpresionista es una hoja de ruta hacia el arte moderno.<br>
+                            La obra de Van Gogh, en particular La noche estrellada, sigue siendo tan emblemática que hoy se celebra en forma de instalaciones inmersivas y se recrea con tecnología de drones.
+                        </p>
+                        <img src="imagenes/la-noche-estrellada.jpg" class="img-fluid rounded shadow" alt="La Noche Estrellada de Vincent van Gogh" data-aos="fade-up">
+                    </article>
                     </div>
-                    <div class="col-md-4 offset-md-4">
+
+                    <div class="col-md-6 mb-4">
                         <article data-aos="fade-up">
-                            <h2>Salvador Dali</h2>
-                        <p data-aos="fade-left">
-                                Más adelante, el <strong>Cubismo</strong> de Picasso y Braque fragmentó formas y perspectivas, revolucionando la manera en que percibimos el mundo visualmente.
-                                El <strong>Surrealismo</strong>, con Dalí y Magritte, navegó por el subconsciente, creando imágenes oníricas que desafían la lógica.<br>
-                                En cuanto a la <strong>escultura</strong>, el <strong>Clasicismo</strong> griego estableció estándares de belleza ideales, enfatizando proporciones y equilibrio, como se observa en las estatuas de dioses y atletas.<br>
-                                El <strong>Barroco</strong> introdujo dinamismo y movimiento dramático, con Bernini capturando escenas llenas de energía y emoción en mármol. En la era moderna, artistas como **Auguste Rodin** reinventaron la escultura con obras emocionalmente cargadas y técnicas innovadoras que dieron vida a materiales como el bronce.<br>
-                        </p>
-                        </article>
-                    </div>    
-                    <div class="col-md-3 offset-md-3">
-                        <article data-aos="fade-up">
-                            <h2>Vincent Van Gogh</h2>
-                        <p data-aos="fade-left">
-                                Explorando otras formas, el <strong>Grabado</strong> es una técnica que permite reproducir imágenes mediante matrices talladas, utilizada magistralmente por artistas como Durero y Goya para difundir sus obras.<br>
-                                La <strong>Fotografía</strong>, aunque inicialmente vista solo como una herramienta documental, rápidamente se convirtió en una forma de arte que captura la realidad desde perspectivas únicas, siendo pioneros artistas como Ansel Adams.<br>
-                                El <strong>Arte Digital</strong> ha emergido con fuerza en la era tecnológica, fusionando programación y creatividad para generar piezas interactivas y multimedia. Tecnologías como la realidad virtual y aumentada están expandiendo las fronteras de lo que consideramos arte.<br>
-                                Más allá de las técnicas tradicionales, movimientos como el <strong>Arte Conceptual</strong> ponen énfasis en la idea o concepto detrás de la obra más que en su forma física, cuestionando las convenciones y el rol del arte en la sociedad.<br>
-                                Cada estilo y técnica artística es un reflejo del contexto histórico y cultural de su tiempo, ofreciendo una ventana a las preocupaciones, aspiraciones y sensibilidades de los artistas y sus comunidades. El arte es, en esencia, una conversación entre el creador y el espectador a través de los siglos.<br>
-                                Hablando de técnicas que fusionan lo antiguo y lo nuevo, ¿ya exploraste el <strong>Bioarte</strong>? Es un campo intrigante donde artistas utilizan organismos vivos y procesos biológicos para crear obras que cuestionan nuestra relación con la ciencia y la naturaleza.
-                                Es fascinante cómo el arte sigue evolucionando y encontrando nuevas formas de expresión en el mundo contemporáneo.    
-                        </p>
-                        </article>
-                    </div>
-                    <div class="col-md-6 offset-md-6">
-                        <article data-aos="fade-up">
-                            <h2>Frida Kahlo</h2>
-                        <p data-aos="fade-left">
-                                Explorando otras formas, el <strong>Grabado</strong> es una técnica que permite reproducir imágenes mediante matrices talladas, utilizada magistralmente por artistas como Durero y Goya para difundir sus obras.<br>
-                                La <strong>Fotografía</strong>, aunque inicialmente vista solo como una herramienta documental, rápidamente se convirtió en una forma de arte que captura la realidad desde perspectivas únicas, siendo pioneros artistas como Ansel Adams.<br>
-                                El <strong>Arte Digital</strong> ha emergido con fuerza en la era tecnológica, fusionando programación y creatividad para generar piezas interactivas y multimedia. Tecnologías como la realidad virtual y aumentada están expandiendo las fronteras de lo que consideramos arte.<br>
-                                Más allá de las técnicas tradicionales, movimientos como el <strong>Arte Conceptual</strong> ponen énfasis en la idea o concepto detrás de la obra más que en su forma física, cuestionando las convenciones y el rol del arte en la sociedad.<br>
-                                Cada estilo y técnica artística es un reflejo del contexto histórico y cultural de su tiempo, ofreciendo una ventana a las preocupaciones, aspiraciones y sensibilidades de los artistas y sus comunidades. El arte es, en esencia, una conversación entre el creador y el espectador a través de los siglos.<br>
-                                Hablando de técnicas que fusionan lo antiguo y lo nuevo, ¿ya exploraste el <strong>Bioarte</strong>? Es un campo intrigante donde artistas utilizan organismos vivos y procesos biológicos para crear obras que cuestionan nuestra relación con la ciencia y la naturaleza.
-                                Es fascinante cómo el arte sigue evolucionando y encontrando nuevas formas de expresión en el mundo contemporáneo.    
-                        </p>
-                        </article>
-                    </div>
-                    <div class="col-md-6 offset-md-6">
-                        <article data-aos="fade-up">
-                            <h2></h2>
-                        <p data-aos="fade-left">
-                                Explorando otras formas, el <strong>Grabado</strong> es una técnica que permite reproducir imágenes mediante matrices talladas, utilizada magistralmente por artistas como Durero y Goya para difundir sus obras.<br>
-                                La <strong>Fotografía</strong>, aunque inicialmente vista solo como una herramienta documental, rápidamente se convirtió en una forma de arte que captura la realidad desde perspectivas únicas, siendo pioneros artistas como Ansel Adams.<br>
-                                El <strong>Arte Digital</strong> ha emergido con fuerza en la era tecnológica, fusionando programación y creatividad para generar piezas interactivas y multimedia. Tecnologías como la realidad virtual y aumentada están expandiendo las fronteras de lo que consideramos arte.<br>
-                                Más allá de las técnicas tradicionales, movimientos como el <strong>Arte Conceptual</strong> ponen énfasis en la idea o concepto detrás de la obra más que en su forma física, cuestionando las convenciones y el rol del arte en la sociedad.<br>
-                                Cada estilo y técnica artística es un reflejo del contexto histórico y cultural de su tiempo, ofreciendo una ventana a las preocupaciones, aspiraciones y sensibilidades de los artistas y sus comunidades. El arte es, en esencia, una conversación entre el creador y el espectador a través de los siglos.<br>
-                                Hablando de técnicas que fusionan lo antiguo y lo nuevo, ¿ya exploraste el <strong>Bioarte</strong>? Es un campo intrigante donde artistas utilizan organismos vivos y procesos biológicos para crear obras que cuestionan nuestra relación con la ciencia y la naturaleza.
-                                Es fascinante cómo el arte sigue evolucionando y encontrando nuevas formas de expresión en el mundo contemporáneo.    
-                        </p>
-                        </article>
-                    </div>        
+                    <h3 data-aos="fade-up">Paul Cézanne</h3>
+                    <p data-aos="fade-left">
+                        El destacado pintor postimpresionista Paul Cézanne ha disfrutado de un legado duradero gracias a su enfoque innovador de la perspectiva,
+                        una paleta de colores vivos y su uso de pinceladas pictóricas.
+                        De hecho, su preferencia por descomponer formas y usar tonos audaces a menudo lo ha llevado a ser considerado un precursor del cubismo.
+                    </p>
+                    <img src="imagenes/mont-sainte-victoire.jpg" class="img-fluid rounded shadow" alt="Mont Sainte Victoire de Paul Cézanne" data-aos="fade-up">
+                </article>
                 </div>
-            </div>
-        </section>
 
-        <!-- Pie de página -->
-        <footer class="text-light text-center p-3">
-            <p>&copy; 2024 TP Final - Todos los derechos reservados.</p>
-        </footer>
+                <div class="col-md-6 mb-4">
+                    <article data-aos="fade-up">
+                <h3 data-aos="fade-up">Claude Monet</h3>
+                <p data-aos="fade-left">
+                    Desde trabajar al aire libre hasta sus estudios históricos sobre el tiempo y la luz,
+                    su práctica hizo de Claude Monet el más querido de todos los pintores impresionistas.
+                    De hecho, a su pintura Impresión, sol naciente se le atribuye el nacimiento de esta corriente artística.
+                </p>
+                <img src="imagenes/nenufares.jpg" class="img-fluid rounded shadow" alt="Nenúfares de Claude Monet" data-aos="fade-up">
+                </article>
+                </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script src="../js/librerias.js"></script>
-    </body>
-    </html>
+                <div class="col-md-6 mb-4">
+                    <article data-aos="fade-up">
+                <h3 data-aos="fade-up">Mary Cassatt</h3>
+                <p data-aos="fade-left">
+                    Como parte del grupo de los impresionistas, Mary Cassatt fue un pilar que dio forma al legado de este movimiento.
+                    La artista estadounidense desafió los límites con sus pinceladas sueltas y colores luminosos.
+                    Además, es conocida por retratar a las madres y los niños en sus pinturas.
+                    Sus composiciones íntimas, que retrataban los momentos más comunes de la maternidad,
+                    fueron revolucionarias en ese momento y ayudaron a forjar su legado.
+                </p>
+                <img src="imagenes/el-bano-del-nino.jpg" class="img-fluid rounded shadow" alt="El Baño del Niño de Mary Cassatt" data-aos="fade-up">
+                </article>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <article data-aos="fade-up">
+                <h3 data-aos="fade-up">Tamara de Lempicka</h3>
+                <p data-aos="fade-left">
+                    La artista polaca Tamara de Lempicka fue una superestrella de principios del siglo XX.
+                    Rodeada por la élite de la vanguardia en París, esta pintora se distanció del impresionismo,
+                    el estilo popular de la época, y se concentró en trazar su propio camino.
+                    La calidad gráfica de su trabajo y sus colores vivos e intensos la convirtieron en una líder de la pintura art déco.
+                    Hoy, su trabajo continúa inspirando a los diseñadores y es emblemático de esta Edad de Oro.
+                </p>
+                </article>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <article data-aos="fade-up">
+                <h3 data-aos="fade-up">Pablo Picasso</h3>
+                <p data-aos="fade-left">
+                    Con una amplia carrera que en la que experimentó con múltiples estilos y produjo más de 20,000 obras,
+                    Pablo Picasso es sin duda uno de los nombres más reconocidos en el arte occidental.
+                    Su papel en el despunte del cubismo sería suficiente para consolidar su estatus en los libros de historia;
+                    sin embargo, Picasso hizo mucho más. Este pintor español es conocido por mostrar cómo el arte clásico puede ser dominado,
+                    y luego manipulado, para convertirse en algo nuevo, fresco y moderno.
+                </p>
+                <img src="imagenes/las-senoritas-de-avignon.jpg" class="img-fluid rounded shadow" alt="Las Señoritas de Avignon de Pablo Picasso" data-aos="fade-up">
+                </article>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <article data-aos="fade-up">
+                <h3 data-aos="fade-up">Salvador Dalí</h3>
+                <p data-aos="fade-left">
+                    El artista español Salvador Dalí no solo es el pintor surrealista más famoso,
+                    sino que también fue uno de los creadores más prolíficos del siglo XX.
+                    Los icónicos “paisajes oníricos” pintados por Dalí ilustran sus propios sueños, alucinaciones y su mente interior.
+                    Su obra explora temas como la religión, el erotismo, la muerte y la decadencia,
+                    representados en su propio lenguaje visual de símbolos y motivos recurrentes.
+                    Sus criaturas surrealistasl, relojes derretidos y elefantes con patas de araña
+                    - se consideran símbolos de fuerza, así como representaciones del futuro.
+                </p>
+                <img src="imagenes/salvador-dali.jpg" class="img-fluid rounded shadow" alt="salvador Dali con su ocelote" data-aos="fade-up">
+                </article>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <article data-aos="fade-up">
+                <h3 data-aos="fade-up">Frida Kahlo</h3>
+                <p data-aos="fade-left">
+                    Sus íntimos y emotivos autorretratos, así como la celebración de su patrimonio cultural,
+                    son solo algunas de las cosas que hacen de Frida Kahlo una de las más grandes figuras del siglo XX.
+                    Aunque actualmente Frida Kahlo se ha convertido es una especie de ícono de la cultura pop,
+                    esto no debería eclipsar su gran habilidad como pintora y sus innovaciones para llevar la cultura mexicana a un público más amplio.
+                    Sus autorretratos –profundamente personales– también apuntan a una nueva dirección para los artistas modernos,
+                    donde el arte consistía en expresar emociones internas en lugar de intentar complacer a un coleccionista o mecenas.
+                </p>
+                <img src="imagenes/frida-kahlo.png" class="img-fluid rounded shadow" alt="Frida Kahlo" data-aos="fade-up">
+                </article>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <article data-aos="fade-up">
+                <h3 data-aos="fade-up">Jackson Pollock</h3>
+                <p data-aos="fade-left">
+                    El pintor estadounidense Jackson Pollock es mejor conocido por su innovadora técnica de pintura.
+                    Al verter pintura sobre el lienzo, el expresionista abstracto creó obras de arte dinámicas y abstractas que revolucionaron la escena artística.
+                    Pollock utilizó la fuerza de todo su cuerpo para salpicar y verter pintura sobre sus lienzos,
+                    poniendo de cabeza las nociones tradicionales de cómo debían trabajar los pintores.
+                    Su estudio a menudo se volvía parte de su trabajo:
+                    en algunas de sus pinturas incluso se pueden ver clavos o colillas de cigarrillos mezclados entre la pintura.
+                </p>
+                <img src="imagenes/pollock.jpg" class="img-fluid rounded shadow" alt="Obra de Jackson Pollock" data-aos="fade-up">
+                </article>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <article data-aos="fade-up">
+                <h3 data-aos="fade-up">Fernando Botero</h3>
+                <p data-aos="fade-left">
+                    Entre los pintores contemporáneos, no hay figura cuya fama se compare a Fernando Botero.
+                    Este prolífico pintor colombiano –el más colombiano de todos, según el artista mismo– ha creado un estilo único:
+                    el ‘boterismo’, que se caracteriza por figuras regordetas en diversos escenarios y situaciones.
+                    Sin embargo, Botero ha señalado que él no pinta “personas gordas”, sino volumen.
+                    Este elemento, combinado con una estética colorida y amable,
+                    ha hecho que sus inolvidables piezas de arte figurativo sean reconocibles alrededor del mundo.
+                </p>
+                <img src="imagenes/fernando-botero.jpg" class="img-fluid rounded shadow" alt="Foto de Fernando Botero" data-aos="fade-up">
+                </article>
+                </div>
+                            </div>    
+                                    <div>
+                                        Fuente: <a href="https://mymodernmet.com/es/mejores-pintores-historia/">My Modern Met en Español</a>
+                                    </div>
+                                </div>   
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Pie de página -->
+                <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
+                    <p class="col-md-4 mb-0 text-body-secondary">Arte y Diseño</p>
+                
+                    <ul class="nav col-md-4 justify-content-end">
+                      <li class="nav-item"><a href="../index.html" class="nav-link px-2 text-body-secondary">Home</a></li>
+                      <li class="nav-item"><a href="../historia/index.html" class="nav-link px-2 text-body-secondary">Historia del Arte</a></li>
+                      <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Artistas Destacados</a></li>
+                      <li class="nav-item"><a href="../corrientes/index.html" class="nav-link px-2 text-body-secondary">Corrientes Artísticas</a></li>
+                      <li class="nav-item"><a href="../tendencias/index.html" class="nav-link px-2 text-body-secondary">Inspiración y Tendencias</a></li>
+                      <li class="nav-item"><a href="../galeria/index.html" class="nav-link px-2 text-body-secondary">Galería</a></li>
+                    </ul>
+                    <ul class="nav col-md-4 justify-content-end">
+                      <li class="nav-item"><a href="../recursos/index.html" class="nav-link px-2 text-body-secondary">Recursos para Artistas</a></li>
+                      <li class="nav-item"><a href="../juego/index.html" class="nav-link px-2 text-body-secondary">Puzzle</a></li>
+                      <li class="nav-item"><a href="../contacto.html" class="nav-link px-2 text-body-secondary">Contacto</a></li>
+                      <li class="nav-item"><a href="../about.html" class="nav-link px-2 text-body-secondary">About</a></li>
+                    </ul>
+                  </footer>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+                <script src="../js/librerias.js"></script>
+            </body>
+            </html>
