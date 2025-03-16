@@ -1,4 +1,3 @@
-/* Importar fuentes desde Google Fonts (esto también se puede colocar en el HTML dentro de <head>) */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap');
 
 
@@ -7,13 +6,15 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background: #fdfdfd;
+    background: rgb(146,20,166);
+    background: linear-gradient(180deg, rgba(146,20,166,0.5102415966386555) 9%, rgba(20,179,185,1) 57%, rgba(255,168,247,1) 100%);
     -webkit-font-smoothing: antialiased;
 }
 
 /* Barra de navegación */
 .navbar {
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    background: rgb(180,23,241);
+    background: radial-gradient(circle, rgba(180,23,241,1) 0%, rgba(70,211,252,1) 100%);
     padding: 1rem 2rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -74,12 +75,11 @@ a li {
 }
 
 a:hover {
-    color: #fad0c4;
-    background: #e91e63;
+    color: #f50eda;
     transform: scale(1.05);
 }
 
-/* Imagen de héroe */
+/* Imagen de hero */
 .hero-img {
     background-size: cover;
     background-position: center;
@@ -119,7 +119,7 @@ a:hover {
 }
 
 
-/* Pie de página */
+/* footer */
 footer {
     background: linear-gradient(45deg, #6a11cb, #2575fc);
     color: white;
@@ -128,6 +128,10 @@ footer {
     font-size: 0.9rem;
     letter-spacing: 0.5px;
 }
+
+.text-body-secondary {
+    color: #fff !important;
+  }
 
 
 /* Estilos básicos para el contenedor y la cuadrícula del puzzle */
@@ -145,7 +149,6 @@ footer {
     border-radius: 8px;
 }
 
-/* Clase que aplica el efecto fade (desvanecimiento) */
 .fade {
     opacity: 0;
 }
@@ -229,7 +232,6 @@ footer {
 }
 
 #puzzle-container {
-    /* Ajustamos el tamaño y la relación de aspecto */
     width: 320px;
     max-width: 90%;
     aspect-ratio: 1;
@@ -237,15 +239,11 @@ footer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
-    
-    /* Fondo sutil con un tono claro y borde redondeado */
     background: #f5f5f5;
     border: 2px solid #ddd;
     padding: 5px;
     margin: 20px auto;
     border-radius: 10px;
-    
-    /* Sombra suave para generar profundidad */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: opacity 0.5s ease;
     position: relative;
@@ -271,3 +269,69 @@ footer {
     background: #fff;
     cursor: default;
 }
+
+/* Estilos galería de misc usando Fancybox */
+  /* Miniaturas con tamaño uniforme */
+  .thumbnail {
+    width: 250px; /* Define el ancho deseado */
+    height: 250px; /* Define el alto deseado */
+    display: block;
+    overflow: hidden;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Efecto hover */
+  }
+  
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene la proporción */
+  }
+  
+  .thumbnail:hover {
+    transform: scale(1.05); /* Zoom al pasar el mouse */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Estilos para el formulario de contacto */
+legend {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  label {
+    font-weight: bold;
+    padding: 0.5em;
+  }
+  
+  form .form-control {
+    border: 2px solid #ced4da;
+    border-radius: 8px;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  form .form-control:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+  }
+  
+  .invalid-feedback, .valid-feedback {
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  
+  textarea {
+    resize: none;
+  }
+
+    /* para la card de la página About */
+  .profile-photo {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; 
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
